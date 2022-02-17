@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>Working of BitTorrent for file distribution</TITLE>
+<META NAME="description" CONTENT="Working of BitTorrent for file distribution">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html163"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node26.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node24.html">Peer-to-Peer Applications</A>
+<B> Previous:</B> <A
+ HREF="node24.html">Peer-to-Peer Applications</A>
+ &nbsp; <B>  <A ID="tex2html164"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION04191000000000000000">
+Working of BitTorrent for file distribution</A>
+</H2><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">The collection of all peers participating in the distribution of a particular file is called a <SPAN  CLASS="textit">torrent</SPAN>.  Each <SPAN  CLASS="textit">torrent</SPAN> has an infrastructure
+	node called a <SPAN  CLASS="textit">tracker</SPAN>.
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">When a peer joins a torrent, it registers itself with the tracker and periodically informs the tracker that it is
+	still in the torrent.
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<DIV class="CENTER"><A ID="320"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure 1.10:</STRONG>
+File distribution with BitTorrent</CAPTION>
+<TR><TD>
+<DIV class="CENTER">		<IMG STYLE=""
+ SRC="./bittorrent.png"
+ ALT="Image bittorrent">
+		</DIV></TD></TR>
+</TABLE>
+</DIV>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">As shown in figure, when Alice joins the torrent, the tracker randomly selects a subset of peers and sends the IP address of these peers to Alice. Possessing this list of peers, Alice attempts to establish
+	concurrent TCP connections with all the peers on this list.
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">At any given time, each peer will have a subset of chunks from the file, with different peers having
+	different subsets. Periodically, Alice will ask each of her neighboring peers for the list of the chunks they have.
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">So at any given instant of time, Alice will have a subset of chunks and will know which chunks her
+	neighbors have. Alice uses a technique called <SPAN  CLASS="textit">rarest first</SPAN>.
+	The idea is to determine, from among the chunks she does not have, the chunks that are the rarest
+	among her neighbors and then request those rarest chunks first. In this manner, the rarest chunks get more quickly
+	redistributed.
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">To determine which requests she responds to, BitTorrent uses a clever trading algorithm. Alice continually measures the rate at which she receives bits
+	and determines the four peers that are feeding her bits at the highest rate. She then reciprocates by
+	sending chunks to these same four peers. Every 10 seconds, she recalculates the rates and possibly
+	modifies the set of four peers.
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html163"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node26.html">About this document ...</A>
+<B> Up:</B> <A
+ HREF="node24.html">Peer-to-Peer Applications</A>
+<B> Previous:</B> <A
+ HREF="node24.html">Peer-to-Peer Applications</A>
+ &nbsp; <B>  <A ID="tex2html164"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>SMTP</TITLE>
+<META NAME="description" CONTENT="SMTP">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html146"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node19.html">Comparision with HTTP</A>
+<B> Up:</B> <A
+ HREF="node17.html">Electronic Mail in the</A>
+<B> Previous:</B> <A
+ HREF="node17.html">Electronic Mail in the</A>
+ &nbsp; <B>  <A ID="tex2html147"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION04171000000000000000">
+SMTP</A>
+</H2><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+	SMTP transfers messages from senders’ mail servers to the recipients’ mail servers. It restricts
+	the body of all mail messages to simple 7-bit ASCII.
+<BR></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">For Example:  Suppose Alice wants
+	to send Bob a simple ASCII message:
+	</SPAN></SPAN></SPAN></SPAN>
+<OL>
+<LI>Alice invokes her user agent for e-mail, provides Bob’s e-mail address, composes a message, and instructs the user agent to send the
+		message.
+</LI>
+<LI>Alice’s user agent sends the message to her mail server, where it is placed in a message queue.
+</LI>
+<LI>The client side of SMTP, running on Alice’s mail server, sees the message in the message
+		queue. It opens a TCP connection to an SMTP server, running on Bob’s mail server.
+</LI>
+<LI>After some initial SMTP handshaking, the SMTP client sends Alice’s message into the TCP
+		connection.
+</LI>
+<LI>At Bob’s mail server, the server side of SMTP receives the message. Bob’s mail server then
+		places the message in Bob’s mailbox.
+</LI>
+<LI>Bob invokes his user agent to read the message at his convenience.
+	
+</LI>
+</OL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">The scenario is summarized in Figure.
+	</SPAN></SPAN></SPAN></SPAN>
+<DIV class="CENTER"><A ID="234"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure 1.8:</STRONG>
+Alice sends a message to Bob</CAPTION>
+<TR><TD>
+<DIV class="CENTER">		<IMG STYLE=""
+ SRC="./smtp.png"
+ ALT="Image smtp">
+		</DIV></TD></TR>
+</TABLE>
+</DIV>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html146"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node19.html">Comparision with HTTP</A>
+<B> Up:</B> <A
+ HREF="node17.html">Electronic Mail in the</A>
+<B> Previous:</B> <A
+ HREF="node17.html">Electronic Mail in the</A>
+ &nbsp; <B>  <A ID="tex2html147"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

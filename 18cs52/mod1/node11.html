@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>Web Caching</TITLE>
+<META NAME="description" CONTENT="Web Caching">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html126"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node12.html">The Conditional GET</A>
+<B> Up:</B> <A
+ HREF="node5.html">Application Layer</A>
+<B> Previous:</B> <A
+ HREF="node10.html">HTTP Response Message</A>
+ &nbsp; <B>  <A ID="tex2html127"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A ID="SECTION04140000000000000000">
+Web Caching</A>
+</H1><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+	A Web cache&mdash;also called a proxy server&mdash;is a network entity that satisfies HTTP requests on the
+	behalf of an origin Web server. The Web cache has its own disk storage and keeps copies of recently
+	requested objects in this storage.
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">As shown in Figure, a user’s browser can be configured so that
+	all of the user’s HTTP requests are first directed to the Web cache.
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN>
+<DIV class="CENTER"><A ID="168"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure 1.5:</STRONG>
+Clients requesting objects through a Web cache</CAPTION>
+<TR><TD>
+<DIV class="CENTER">		<IMG STYLE=""
+ SRC="./webCaching.png"
+ ALT="Image webCaching">
+		</DIV></TD></TR>
+</TABLE>
+</DIV>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">As an example, suppose a browser is
+	requesting the object <SPAN  CLASS="texttt">http://www.someschool.edu/campus.gif</SPAN>. Here is what happens:
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN>
+<OL>
+<LI>The browser establishes a TCP connection to the Web cache and sends an HTTP request for
+		the object to the Web cache.
+</LI>
+<LI>The Web cache checks to see if it has a copy of the object stored locally. If it does, the Web
+		cache returns the object within an HTTP response message to the client browser.
+</LI>
+<LI>If the Web cache does not have the object, the Web cache opens a TCP connection to the origin
+		server. The Web cache then sends an HTTP request for the
+		object into the cache-to-server TCP connection. After receiving this request, the origin server
+		sends the object within an HTTP response to the Web cache.
+</LI>
+<LI>When the Web cache receives the object, it stores a copy in its local storage and sends a copy,
+		within an HTTP response message, to the client browser.
+	
+</LI>
+</OL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html126"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node12.html">The Conditional GET</A>
+<B> Up:</B> <A
+ HREF="node5.html">Application Layer</A>
+<B> Previous:</B> <A
+ HREF="node10.html">HTTP Response Message</A>
+ &nbsp; <B>  <A ID="tex2html127"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

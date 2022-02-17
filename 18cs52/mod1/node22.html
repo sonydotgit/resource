@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>Services Provided by DNS</TITLE>
+<META NAME="description" CONTENT="Services Provided by DNS">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="next" HREF="node23.html">
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="next" HREF="node23.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html156"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node23.html">DNS Records and Messages</A>
+<B> Up:</B> <A
+ HREF="node21.html">DNS</A>
+<B> Previous:</B> <A
+ HREF="node21.html">DNS</A>
+ &nbsp; <B>  <A ID="tex2html157"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION04181000000000000000">
+Services Provided by DNS</A>
+</H2><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+	<SPAN CLASS="LARGE"><SPAN  CLASS="textbf">[Aug/Sept-2020]</SPAN>
+</SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">In order for the user's host to be able to send an HTTP request message to the Web server <SPAN  CLASS="texttt">www.someschool.edu</SPAN>, the user's host must first obtain the IP address of <SPAN  CLASS="texttt">www.someschool.edu</SPAN>. This is done as follows:
+	</SPAN></SPAN></SPAN></SPAN></SPAN>
+<OL>
+<LI>The same user machine runs the client side of the DNS application.
+</LI>
+<LI>The browser extracts the hostname from the URL and passes the hostname to the client side of the DNS application.
+</LI>
+<LI>The DNS client sends a query containing the hostname to a DNS server.
+</LI>
+<LI>The DNS client eventually receives a reply, which includes the IP address for the hostname.
+</LI>
+<LI>Once the browser receives teh IP address from DNS, it can initiate a TCP connection to the HTTP server process located at port 80 at that IP address.
+	
+</LI>
+</OL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">DNS provides a few other important services in addition to translating hostnames to IP addresses:
+</SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">[Writing one point for each is enough]
+</SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN></SPAN>
+<UL>
+<LI>Host aliasing:
+		
+<UL>
+<LI>A host with complicated hostname can have one or more alias names.
+</LI>
+<LI>For example, a hostname such as <SPAN  CLASS="texttt">relay1.west-coast.enterprise.com</SPAN> could have, say, two aliases such as <SPAN  CLASS="texttt">enterprise.com</SPAN> and <SPAN  CLASS="texttt">www.enterprise.com</SPAN>. In this case, the hostname
+<BR><SPAN  CLASS="texttt">relay1.west-coast.enterprise.com</SPAN> is said to be <SPAN  CLASS="textit">canonical hostname</SPAN>.
+		
+</LI>
+</UL>
+
+<P>
+</LI>
+<LI>Mail server aliasing:
+		
+<UL>
+<LI>For obvious reasons, it is highly desirable that e-mail addresses be mnemonic.
+</LI>
+<LI>If Bob has an account with Hotmail, Bob's e-mail address might be as simple as <SPAN  CLASS="texttt">bob@hotmail.com</SPAN>. However, the hostname of the Hotmail server is more complicated and much less mnemonic than simply <SPAN  CLASS="texttt">hotmail.com</SPAN>.
+</LI>
+<LI>DNS can be invoked by a mail application to obtain the canonical hostname for a supplied alias hostname as well as the IP address of the host.
+		
+</LI>
+</UL>
+
+<P>
+</LI>
+<LI>Load distribution:
+		
+<UL>
+<LI>DNS is also used to perform load distribution among replicated servers, such as replicated Web servers.
+		
+</LI>
+</UL>
+</LI>
+</UL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html156"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node23.html">DNS Records and Messages</A>
+<B> Up:</B> <A
+ HREF="node21.html">DNS</A>
+<B> Previous:</B> <A
+ HREF="node21.html">DNS</A>
+ &nbsp; <B>  <A ID="tex2html157"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

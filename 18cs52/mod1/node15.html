@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>FTP Commands and Replies</TITLE>
+<META NAME="description" CONTENT="FTP Commands and Replies">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html137"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node16.html">Comparision with HTTP</A>
+<B> Up:</B> <A
+ HREF="node13.html">FTP</A>
+<B> Previous:</B> <A
+ HREF="node14.html">Working of FTP</A>
+ &nbsp; <B>  <A ID="tex2html138"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION04162000000000000000">
+FTP Commands and Replies</A>
+</H2><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">The commands, from client to server, and replies, from server to client, are sent across the control connection in 7-bit ASCII format. In order to delineate successive commands, a carriage return and line feed end each command. Each command consists of four uppercase ASCII characters, some with optional arguments.
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">Some of the common commands are given below:
+	</SPAN></SPAN></SPAN></SPAN>
+<UL>
+<LI><SPAN  CLASS="texttt">USER username:</SPAN> Used to send the user identification to the server.
+</LI>
+<LI><SPAN  CLASS="texttt">PASS password:</SPAN> Used to send the user password to the server.
+</LI>
+<LI><SPAN  CLASS="texttt">LIST:</SPAN> Used to ask the server to send back a list of all the files in the current remote directory.
+</LI>
+<LI><SPAN  CLASS="texttt">RETR filename:</SPAN> Used to retrieve a file from the current directory of the remote host.
+</LI>
+<LI><SPAN  CLASS="texttt">STOR filename:</SPAN> Used to store a file into the current directory of the remote host.
+	
+</LI>
+</UL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">Each command is followed by a reply, sent from server to client. The replies are three&ndash;digit numbers, with an optional message following the number.
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN>
+<UL>
+<LI><SPAN  CLASS="texttt">331 Username OK, password required</SPAN>
+</LI>
+<LI><SPAN  CLASS="texttt">125 Data connection already open; transfer starting</SPAN>
+</LI>
+<LI><SPAN  CLASS="texttt">425 Can't open data connection</SPAN>
+</LI>
+<LI><SPAN  CLASS="texttt">452 Error writing file</SPAN>
+	
+</LI>
+</UL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html137"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node16.html">Comparision with HTTP</A>
+<B> Up:</B> <A
+ HREF="node13.html">FTP</A>
+<B> Previous:</B> <A
+ HREF="node14.html">Working of FTP</A>
+ &nbsp; <B>  <A ID="tex2html138"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

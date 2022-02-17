@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>The Conditional GET</TITLE>
+<META NAME="description" CONTENT="The Conditional GET">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html128"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node13.html">FTP</A>
+<B> Up:</B> <A
+ HREF="node5.html">Application Layer</A>
+<B> Previous:</B> <A
+ HREF="node11.html">Web Caching</A>
+ &nbsp; <B>  <A ID="tex2html129"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A ID="SECTION04150000000000000000">
+The Conditional GET</A>
+</H1><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+	Although caching can reduce user-perceived response times, it introduces a new problem. The copy of an object residing in the cache may be stale. In other words, the object housed in
+	the Web server may have been modified since the copy was cached at the client.
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN>
+<UL>
+<LI>HTTP has a mechanism that allows a cache to verify that its objects are up to date. This
+		mechanism is called the <SPAN  CLASS="textit">conditional GET</SPAN>.
+</LI>
+<LI>An HTTP request message is a so-called conditional GET message if the request message
+		uses the <SPAN  CLASS="textit">GET</SPAN> method and the request message includes an <SPAN  CLASS="textit">If-Modified-Since:</SPAN> header
+		line.
+	
+</LI>
+</UL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">Example:  First, on the behalf of a
+	requesting browser, a proxy cache sends a request message to a Web server:
+<BR></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN  CLASS="texttt">GET /fruit/kiwi.gif HTTP/1.1
+<BR>
+Host: www.exotiquecuisine.com</SPAN>
+<BR></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">Second, the Web server sends a response message with the requested object to the cache:
+<BR></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN  CLASS="texttt">HTTP/1.1 200 OK
+<BR>
+Date: Sat, 3 Oct 2015 15:39:29
+<BR>
+Server: Apache/1.3.0 (Unix)
+<BR>
+Last-Modified: Wed, 9 Sep 2015 09:23:24
+<BR>
+Content-Type: image/gif
+<BR>		
+<BR>(data data data data data ...)</SPAN>
+<BR></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">The cache forwards the object to the requesting browser but also caches the object locally and also stores the last-modified date along with the object.
+<BR></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">One week later, another
+	browser requests the same object via the cache, and the object is still in the cache.
+<BR>
+Since this object
+	may have been modified at the Web server in the past week, the cache performs an up-to-date check by
+	issuing a conditional <SPAN  CLASS="textit">GET</SPAN>. Specifically, the cache sends:
+<BR></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN  CLASS="texttt">GET /fruit/kiwi.gif HTTP/1.1
+<BR>
+Host: www.exotiquecuisine.com
+<BR>
+If-modified-since: Wed, 9 Sep 2015 09:23:24
+<BR></SPAN>
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">This conditional GET is
+	telling the server to send the object only if the object has been modified since the specified date.
+	Suppose the object has not been modified since 9 Sep 2015 09:23:24.
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">Then, the Web server
+	sends a response message to the cache:
+<BR></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN  CLASS="texttt">HTTP/1.1 304 Not Modified
+<BR>
+Date: Sat, 10 Oct 2015 15:39:29
+<BR>
+Server: Apache/1.3.0 (Unix)
+<BR>		
+<BR>(empty entity body)
+<BR></SPAN>
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">In the last response message has <SPAN  CLASS="textit">304 Not Modified</SPAN> in the status line, which tells the cache that
+	it can go ahead and forward its cached copy of the object to the requesting browser.
+</SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html128"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node13.html">FTP</A>
+<B> Up:</B> <A
+ HREF="node5.html">Application Layer</A>
+<B> Previous:</B> <A
+ HREF="node11.html">Web Caching</A>
+ &nbsp; <B>  <A ID="tex2html129"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

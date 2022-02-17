@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>POP3</TITLE>
+<META NAME="description" CONTENT="POP3">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="next" HREF="node21.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html150"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node21.html">DNS</A>
+<B> Up:</B> <A
+ HREF="node17.html">Electronic Mail in the</A>
+<B> Previous:</B> <A
+ HREF="node19.html">Comparision with HTTP</A>
+ &nbsp; <B>  <A ID="tex2html151"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION04173000000000000000">
+POP3</A>
+</H2><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+	POP3 is an extremely simple mail access protocol.
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN>
+<UL>
+<LI>POP3 begins when the user agent opens a TCP connection to the mail server on port 110.
+</LI>
+<LI>With the TCP connection established, POP3 progresses through three phases: <SPAN  CLASS="textit">authorization</SPAN>,
+		<SPAN  CLASS="textit">transaction</SPAN>, and <SPAN  CLASS="textit">update</SPAN>.
+</LI>
+<LI>During the <SPAN  CLASS="textit">authorization</SPAN> phase, the user agent sends a username and a password to
+		authenticate the user.
+</LI>
+<LI>The <SPAN  CLASS="textit">authorization</SPAN> phase has two principal commands: <SPAN  CLASS="texttt">user &lt;username&gt;</SPAN> and <SPAN  CLASS="texttt">pass
+			&lt;password&gt;</SPAN>.
+<BR>		
+<BR>		<SPAN  CLASS="texttt">user bob
+<BR>			+OK
+<BR>
+pass hungry
+<BR>			+OK user successfully logged on
+<BR></SPAN>
+</LI>
+<LI>During the <SPAN  CLASS="textit">transaction</SPAN> phase, the user agent retrieves messages; also during this phase, the
+		user agent can mark messages for deletion, remove deletion marks, and obtain mail statistics.
+</LI>
+<LI>The <SPAN  CLASS="textit">update</SPAN> phase occurs after the client has issued the quit command, ending the POP3
+		session; at this time, the mail server deletes the messages that were marked for deletion.
+</LI>
+<LI>A user agent using POP3 can often be configured to “download and delete” or
+		to “download and keep.”
+</LI>
+<LI>In the download-and-delete mode, the user agent will issue the <SPAN  CLASS="textit">list</SPAN>, <SPAN  CLASS="textit">retr</SPAN>, and <SPAN  CLASS="textit">dele</SPAN> commands.
+<BR>
+Example:
+		
+<BR>		<SPAN  CLASS="texttt">C: list
+<BR>
+S: 1 498
+<BR>
+S: .
+<BR>
+C: retr 1
+<BR>
+S: (blah blah ...
+<BR>
+S: .................
+<BR>
+S ........... blah)
+<BR>
+S: .
+<BR>
+C: dele 1
+<BR>
+C: quit
+<BR>
+S: +OK POP3 server signing off
+<BR></SPAN>
+	
+</LI>
+</UL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html150"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node21.html">DNS</A>
+<B> Up:</B> <A
+ HREF="node17.html">Electronic Mail in the</A>
+<B> Previous:</B> <A
+ HREF="node19.html">Comparision with HTTP</A>
+ &nbsp; <B>  <A ID="tex2html151"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

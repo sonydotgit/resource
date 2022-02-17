@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2020.2 (Released July 1, 2020) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>DNS Records and Messages</TITLE>
+<META NAME="description" CONTENT="DNS Records and Messages">
+<META NAME="keywords" CONTENT="mod1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2020.2">
+
+<LINK REL="STYLESHEET" HREF="mod1.css">
+
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html158"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node24.html">Peer-to-Peer Applications</A>
+<B> Up:</B> <A
+ HREF="node21.html">DNS</A>
+<B> Previous:</B> <A
+ HREF="node22.html">Services Provided by DNS</A>
+ &nbsp; <B>  <A ID="tex2html159"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION04182000000000000000">
+DNS Records and Messages</A>
+</H2><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+	<SPAN CLASS="LARGE"><SPAN  CLASS="textbf">Dec/Jan-2020</SPAN>
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">The DNS servers that together implement the DNS distributed database store resource records
+	(RRs).
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">A resource record is a four-tuple that contains the following fields://
+	<SPAN  CLASS="texttt">(Name, Value, Type, TTL)</SPAN>
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">TTL is the time to live of the resource record; it determines when a resource should be removed
+	from a cache.
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">The meaning of Name and Value depend on Type:
+	</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<UL>
+<LI>If <SPAN  CLASS="textit">Type=A</SPAN>, then <SPAN  CLASS="textit">Name</SPAN> is a hostname and <SPAN  CLASS="textit">Value</SPAN> is the IP address for the hostname.
+</LI>
+<LI>If <SPAN  CLASS="textit">Type=NS</SPAN>, then <SPAN  CLASS="textit">Name</SPAN> is a domain and <SPAN  CLASS="textit">Value</SPAN> is the hostname of an
+		authoritative DNS server that knows how to obtain the IP addresses for hosts in the domain.
+</LI>
+<LI>If <SPAN  CLASS="textit">Type=CNAME</SPAN>, then <SPAN  CLASS="textit">Value</SPAN> is a canonical hostname for the alias hostname Name. This
+		record can provide querying hosts the canonical name for a hostname.
+</LI>
+<LI>If <SPAN  CLASS="textit">Type=MX</SPAN>, then <SPAN  CLASS="textit">Value</SPAN> is the canonical name of a mail server that has an alias hostname
+		Name.
+	
+</LI>
+</UL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN  CLASS="textbf">DNS Message</SPAN>
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<DIV class="CENTER"><A ID="304"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure 1.9:</STRONG>
+DNS Message Format</CAPTION>
+<TR><TD>
+<DIV class="CENTER">		<IMG STYLE=""
+ SRC="./dnsMessage.png"
+ ALT="Image dnsMessage">
+		</DIV></TD></TR>
+</TABLE>
+</DIV>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<UL>
+<LI>The first 12 bytes is the header section.
+</LI>
+<LI>The first field is a 16-bit number that identifies the query.
+</LI>
+<LI>There are a number of flags in the flag field.
+		
+<UL>
+<LI>A 1-bit query/reply flag indicates whether the message is a query (0) or a reply (1).
+</LI>
+<LI>A 1-bit authoritative flag is set in a reply message when a DNS server is an authoritative server for a queried name.
+</LI>
+<LI>A 1-bit recursion-desired flag is set when a client desires that the DNS server perform recursion when it doesn't have the record.
+</LI>
+<LI>A 1-bit recursion available field is sent in a reply if the DNS server supports recursion.
+		
+</LI>
+</UL>
+</LI>
+<LI>The <SPAN  CLASS="textit">question</SPAN> section contains information about the query that is being made.
+</LI>
+<LI>In a reply from a DNS server, the answer section contains the resource records for the name that was originally queried.
+</LI>
+<LI>The <SPAN  CLASS="textit">authority</SPAN> section contains records of other authoritative servers.
+</LI>
+<LI>The <SPAN  CLASS="textit">additional</SPAN> section contains other helpful records.
+	
+</LI>
+</UL><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE">
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<P>
+<SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"><SPAN CLASS="LARGE"></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html158"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="node24.html">Peer-to-Peer Applications</A>
+<B> Up:</B> <A
+ HREF="node21.html">DNS</A>
+<B> Previous:</B> <A
+ HREF="node22.html">Services Provided by DNS</A>
+ &nbsp; <B>  <A ID="tex2html159"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>
